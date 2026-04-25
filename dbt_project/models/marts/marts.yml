@@ -1,0 +1,47 @@
+version: 2
+
+models:
+  - name: fct_daily_sales
+    description: Taegliche Aggregation von Bestellungen, Umsatz und Steuer.
+    columns:
+      - name: order_date
+        tests:
+          - not_null
+      - name: total_revenue
+        tests:
+          - not_null
+
+  - name: fct_weather_daily_summary
+    description: Portfolio-Metric-View fuer taegliche Wetterkennzahlen.
+    columns:
+      - name: weather_date
+        tests:
+          - not_null
+      - name: location
+        tests:
+          - not_null
+      - name: weather_label
+        tests:
+          - accepted_values:
+              arguments:
+                values: ['rainy', 'warm', 'normal']
+
+  - name: fct_weather_rainy_day_rate_7d
+    description: Anteil regnerischer Tage in den letzten 7 Tagen je Location.
+    columns:
+      - name: location
+        tests:
+          - not_null
+      - name: rainy_day_rate_7d
+        tests:
+          - not_null
+
+  - name: fct_weather_temperature_trend_7d
+    description: Temperaturtrend der letzten 7 Tage je Location.
+    columns:
+      - name: location
+        tests:
+          - not_null
+      - name: temp_delta_7d
+        tests:
+          - not_null

@@ -1,0 +1,33 @@
+name: "dbt_project"
+version: "1.0.0"
+profile: "dbt_project"
+
+# Standard-Pfade im dbt-Projekt.
+model-paths: ["models"]
+analysis-paths: ["analyses"]
+test-paths: ["tests"]
+seed-paths: ["seeds"]
+macro-paths: ["macros"]
+snapshot-paths: ["snapshots"]
+
+# Wird durch `dbt clean` entfernt.
+clean-targets:
+  - "target"
+  - "dbt_packages"
+
+models:
+  dbt_project:
+    # Staging: Rohdaten bereinigen und typisieren.
+    staging:
+      +schema: staging
+      +materialized: view
+
+    # Core: Fachliche Kernmodelle.
+    core:
+      +schema: core
+      +materialized: table
+
+    # Marts: Analysefertige KPI-Modelle.
+    marts:
+      +schema: marts
+      +materialized: table

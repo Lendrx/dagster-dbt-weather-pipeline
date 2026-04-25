@@ -1,0 +1,35 @@
+version: 2
+
+models:
+  - name: dim_sales
+    description: Bereinigte Sales-Dimension als Basis fuer Marts.
+    columns:
+      - name: order_id
+        tests:
+          - not_null
+          - unique
+      - name: order_date
+        tests:
+          - not_null
+      - name: amount
+        tests:
+          - not_null
+      - name: tax_amount
+        tests:
+          - not_null
+
+  - name: dim_weather_daily
+    description: Taegliche Wetteraggregation je Location.
+    columns:
+      - name: weather_date
+        tests:
+          - not_null
+      - name: location
+        tests:
+          - not_null
+      - name: avg_temperature_c
+        tests:
+          - not_null
+      - name: total_precipitation_mm
+        tests:
+          - not_null

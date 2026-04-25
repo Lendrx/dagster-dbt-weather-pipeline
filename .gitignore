@@ -1,0 +1,42 @@
+# Environment and secrets
+.env
+.env.*
+!.env.example
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.so
+.Python
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+.coverage.*
+htmlcov/
+.ipynb_checkpoints/
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# Build and packaging
+build/
+dist/
+*.egg-info/
+
+# Dagster local artifacts
+.tmp_dagster_home_*/
+
+# dbt artifacts
+dbt_project/target/
+dbt_project/logs/
+dbt_packages/
+
+# OS / editor
+.DS_Store
+.idea/
+.vscode/

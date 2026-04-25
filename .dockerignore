@@ -1,0 +1,33 @@
+# Git metadata
+.git
+.gitignore
+
+# Python cache and virtualenv
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+env/
+
+# Local env files and secrets
+.env
+.env.*
+!.env.example
+
+# Tooling outputs
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# Dagster and dbt generated artifacts
+.tmp_dagster_home_*/
+dbt_project/target/
+dbt_project/logs/
+dbt_packages/
+
+# OS / editor
+.DS_Store
+.idea/
+.vscode/

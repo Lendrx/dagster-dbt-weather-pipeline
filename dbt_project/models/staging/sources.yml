@@ -1,0 +1,11 @@
+version: 2
+
+sources:
+  - name: my_source
+    schema: public
+    description: Rohdaten aus der Dagster-Ingestion.
+    tables:
+      - name: raw_sales
+        description: Rohdaten fuer Sales.
+      - name: raw_weather_hourly
+        description: Rohdaten fuer stuendliche Wetterwerte.
