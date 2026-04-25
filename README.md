@@ -1,4 +1,4 @@
-# Weather ELT Portfolio
+# Weather ELT Project!
 
 Kleines End-to-End Projekt mit **Dagster + dbt + Postgres + Docker**.
 Die Daten kommen aus der Open-Meteo API und werden in `staging`, `core` und `marts` modelliert.
